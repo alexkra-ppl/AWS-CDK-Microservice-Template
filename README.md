@@ -7,7 +7,7 @@ This is a template for creating new, container-based, Python Lambda microservice
 
 It provides a clean, configurable, and testable starting point. You can create a new, deployable service in minutes by cloning this repo and running a few  commands.
 
-## ✨ Features
+## Features
 
   * **AWS CDK in Python:** All infrastructure is defined in Python using the AWS CDK.
   * **Container-Based Lambda:** Uses a `Dockerfile` for maximum flexibility and consistency.
@@ -19,7 +19,7 @@ It provides a clean, configurable, and testable starting point. You can create a
 
 -----
 
-## 🚀 Getting Started: New Service
+## Getting Started: New Service
 
 Follow these steps to turn this template into your new microservice.
 
@@ -28,9 +28,8 @@ Follow these steps to turn this template into your new microservice.
 Clone this repo into a new directory with your service's name.
 
 ```bash
-# Replace "my-new-service" with your actual service name
-git clone https://github.com/your-org/cdk-microservice-boilerplate.git my-new-service
-cd my-new-service
+git clone https://github.com/alexkra-ppl/AWS-CDK-Microservice-Template.git new-service
+cd new-service
 ```
 
 ### Step 2: Reset Git History
@@ -44,22 +43,18 @@ git add .
 git commit -m "Initial commit from boilerplate"
 ```
 
-### Step 3: Configure Your Service Name
+### Step 3: Initialize the Service
 
-Open `cdk.json` and set your unique `service_name` and `stack_name`. This is the **only file** you need to edit manually.
+This command will set your unique `service_name` and `stack_name` in the `cdk.json` file.
 
-```json
-{
-  "app": "poetry run python app.py",
-  ...
-  "context": {
-    "service_name": "my-payment-processor",  <-- SET THIS
-    "stack_name": "MyPaymentProcessorStack", <-- SET THIS
-    "include_dynamodb": "false",
-    "include_sqs": "false"
-  }
-}
+**Run this command, replacing `microservice-name` with your chosen service name:**
+
+```bash
+# This is a required first step
+make init name=microservice-name
 ```
+
+> **Note:** This command can only be run once. If you need to re-run it, you must first manually reset the `service_name` in `cdk.json` back to `"generic-service-name"`.
 
 ### Step 4: Install Dependencies
 
@@ -109,11 +104,11 @@ make bootstrap
 make deploy
 ```
 
-That's it\! Your new microservice is live.
+That's it\! New microservice is deployed to AWS.
 
 -----
 
-## 💻 How to Develop
+## How to Develop
 
 1.  **Write Your Business Logic:**
     All your Python code goes in `src/app.py`. Modify the `handler` function to add your logic.
@@ -126,7 +121,7 @@ That's it\! Your new microservice is live.
 
 -----
 
-## 🛠️ CLI Commands (Makefile)
+## CLI Commands (Makefile)
 
 All common tasks are run via `make`.
 
@@ -157,7 +152,7 @@ All common tasks are run via `make`.
 
 -----
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 .

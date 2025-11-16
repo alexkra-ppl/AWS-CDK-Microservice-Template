@@ -95,9 +95,9 @@
         "@aws-cdk/aws-ec2:requirePrivateSubnetsForEgressOnlyInternetGateway": true,
         "@aws-cdk/aws-s3:publicAccessBlockedByDefault": true,
         "@aws-cdk/aws-lambda:useCdkManagedLogGroup": true,
-        "service_name": "sample-ms",
-        "stack_name": "SampleMsStack",
-        "include_sqs": "true",
-        "include_dynamodb": "true"
+        "service_name": "generic-service-name",
+        "stack_name": "GenericServiceNameStack",
+        "include_sqs": "false",
+        "include_dynamodb": "false"
     }
 }
