@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "my-generic-service"
+version = "0.1.0"
+description = "CDK stack for My Generic Service"
+authors = ["Your Team <team@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aws-cdk-lib = "^2.100.0"
+constructs = "^10.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
