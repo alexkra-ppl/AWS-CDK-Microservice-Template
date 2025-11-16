@@ -6,7 +6,7 @@ import os
 from pathlib import Path
 
 CDK_JSON_FILE = Path("cdk.json")
-DEFAULT_NAME = "sample-ms"
+DEFAULT_NAME = "generic-service-name"
 
 def read_config():
     """Reads the cdk.json file."""
